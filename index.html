@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimberly Nweze · Projects</title>
+  <meta name="description" content="Selected machine learning and robotics projects by Kimberly Nweze.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --text: #1c1c1a;
+      --muted: #6b6b66;
+      --line: #e4e4df;
+      --thumb: #efefea;
+      --accent: #2f6b4f;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141413;
+        --text: #ececea;
+        --muted: #9a9a94;
+        --line: #2a2a28;
+        --thumb: #1e1e1c;
+        --accent: #7fbf9c;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 72px 20px 56px; }
+
+    /* Header */
+    header { margin-bottom: 64px; }
+    h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+    .intro { color: var(--muted); margin-top: 8px; max-width: 560px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; font-size: 14px; }
+    .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .contact a:hover { color: var(--text); border-color: var(--text); }
+
+    /* Projects */
+    .label { font-size: 13px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 24px; }
+    .project { padding: 40px 0; border-top: 1px solid var(--line); }
+    .project:last-of-type { border-bottom: 1px solid var(--line); }
+    .thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--thumb);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 13px;
+    }
+    .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .meta { font-size: 13px; color: var(--muted); }
+    h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; margin: 4px 0 10px; }
+    .summary { max-width: 620px; }
+    .result {
+      margin-top: 16px;
+      padding-left: 14px;
+      border-left: 2px solid var(--accent);
+      font-size: 15px;
+    }
+    .result strong { font-weight: 600; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tags span { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+    .links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; font-size: 14px; font-weight: 500; }
+    .links a { color: var(--accent); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+
+    footer { margin-top: 48px; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 520px) {
+      .wrap { padding: 48px 16px 40px; }
+      header { margin-bottom: 48px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>Kimberly Nweze</h1>
+      <p class="intro">MSc Artificial Intelligence for Sustainable Development, UCL. First-Class BEng Robotic Engineering, Queen Mary University of London.</p>
+      <nav class="contact">
+        <a href="mailto:Kumahinweze@gmail.com">Email</a>
+        <a href="www.linkedin.com/in/kimberly-nweze-4ab6b5389">LinkedIn</a>
+        <a href="https://github.com/KimberlySONweze">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="label">Selected projects</p>
+
+      <!-- 1. Deforestation -->
+      <article class="project">
+        <div class="thumb">
+          [image: satellite tile with predicted forest-loss mask]
+          <img src="images/deforestation.png" alt="Satellite image of the Congo Basin with predicted forest loss highlighted" onerror="this.remove()">
+        </div>
+        <p class="meta">MSc project · 2026</p>
+        <h2>Deforestation Detection in Cameroon</h2>
+        <p class="summary">An Attention U-Net that maps forest loss in the Congo Basin from Sentinel-2 imagery, trained on a dataset I built from scratch in Google Earth Engine because no suitable public one existed.</p>
+        <p class="result">Adding the near-infrared band and a rare-class loss function helped the model pick up <strong>small, fragmented clearings</strong> the baseline missed.</p>
+        <div class="tags"><span>PyTorch</span><span>Computer vision</span><span>Google Earth Engine</span><span>Rasterio</span></div>
+        <div class="links">
+          <a href="https://github.com/KimberlySONweze/Deforestation-Detection-in-Cameroon">Code →</a>
+        </div>
+      </article>
+
+      <!-- 2. Boreal -->
+      <!-- <article class="project">
+        <div class="thumb">
+          [image: predicted vs observed heat flux plot]
+          <img src="images/boreal.png" alt="Plot of predicted versus observed sensible heat flux" onerror="this.remove()">
+        </div>
+        <p class="meta">MSc dissertation · 2026</p>
+        <h2>Machine Learning for Boreal Surface Energy Balance</h2>
+        <p class="summary">Models that predict how heat and moisture exchange differ between forest and wetland, using seven years of data from two Finnish research sites, validated on entirely unseen years to avoid data leakage.</p>
+        <p class="result">R² for sensible heat flux on unseen years improved from <strong>0.44 to 0.83</strong>, beating physical and linear baselines.</p>
+        <div class="tags"><span>LightGBM</span><span>Random Forest</span><span>scikit-learn</span><span>Time series</span></div>
+        <div class="links">
+          <a href="[GitHub repo link]">Code →</a>
+        </div>
+      </article> -->
+
+      <!-- 3. Dashboard -->
+      <article class="project">
+        <div class="thumb">
+          [image: screenshot of the dashboard]
+          <img src="images/dashboard.png" alt="Screenshot of the adaptive teacher dashboard" onerror="this.remove()">
+        </div>
+        <p class="meta">MSc project · First-author workshop paper · 2026</p>
+        <h2>LLM-Driven Adaptive Dashboard for Teachers</h2>
+        <p class="summary">A Streamlit dashboard where Llama 3.3 70B reads features from a classroom group discussion, picks the chart a teacher would find most useful, and explains why. Built on 882 real classroom discussions.</p>
+        <p class="result">Independent raters judged the model's chart choices <strong>largely appropriate (1.55 / 2)</strong>, with substantial agreement.</p>
+        <div class="tags"><span>LLMs</span><span>Streamlit</span><span>Feature engineering</span><span>Data visualisation</span></div>
+        <div class="links">
+          <a href="https://github.com/KimberlySONweze/LLM-Driven-Adaptive-Dashboards-for-teachers-.git">Code →</a>
+        </div>
+      </article>
+
+      <!-- 4. Tutor -->
+      <article class="project">
+        <div class="thumb">
+          [image: screenshot of a tutoring conversation]
+          <img src="images/tutor.png" alt="Screenshot of the AI biology tutor guiding a student" onerror="this.remove()">
+        </div>
+        <p class="meta">MSc project · 2026</p>
+        <h2>AI GCSE Biology Tutor</h2>
+        <p class="summary">An AI tutor that guides students to the answer with questions instead of giving it away, personalised to five learner profiles and grounded in real exam questions through retrieval-augmented generation.</p>
+        <p class="result"><strong>Outperformed a standard chatbot on every test query</strong>, and was checked with a gender-bias audit.</p>
+        <div class="tags"><span>RAG</span><span>LLMs</span><span>Python</span></div>
+        <div class="links">
+          <a href="https://github.com/KimberlySONweze/AI-GCSE-Biology-Tutor-.git">Code →</a>
+        </div>
+      </article>
+
+      <!-- 5. Robotic arm -->
+      <article class="project">
+        <div class="thumb">
+          [image: photo of the printed robotic arm]
+          <img src="images/robotic-arm.jpg" alt="3D-printed robotic arm holding a soft gripper" onerror="this.remove()">
+        </div>
+        <p class="meta">BEng final project · 2025</p>
+        <h2>3-DoF Robotic Arm for Strawberry Handling</h2>
+        <p class="summary">A lightweight arm designed to carry a soft granular-jamming gripper for automated strawberry packaging. Modelled in SolidWorks, analysed in MATLAB, and 3D printed over two prototypes.</p>
+        <p class="result">The final 0.35 kg arm reached <strong>3.95 mm mean positioning error</strong> and reliably lifted the gripper.</p>
+        <div class="tags"><span>SolidWorks</span><span>MATLAB</span><span>3D printing</span><span>DYNAMIXEL</span></div>
+        <div class="links">
+          <a href="https://github.com/KimberlySONweze/3-Degree-of-freedom-Robotic-Arm.git">Project Report →</a>
+        </div>
+      </article>
+    </main>
+
+    <footer>[© 2026 Kimberly Nweze]</footer>
+  </div>
+</body>
+</html>
